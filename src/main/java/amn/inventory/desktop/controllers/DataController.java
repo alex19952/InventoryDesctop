@@ -10,7 +10,7 @@ public class DataController {
     private TableData tableData;
 
     public DataController() {
-        tableData = getTableDataFromCSV("D:\\coding\\Java\\GTNN\\InventoryD\\InventoryDesctop\\test\\Основной_файл — копия3.csv", true);
+        tableData = getTableDataFromCSV("D:\\coding\\Java\\GTNN\\InventoryD\\InventoryDesktop\\test\\Основной_файл — копия3.csv", true);
     }
 
     public TableData getTableData() {
