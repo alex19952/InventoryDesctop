@@ -23,13 +23,8 @@ public class TableController {
     TableView<RowData> tableView;
     TableData<RowData> tableData;
 
-    public TableController(TableData<RowData> tableData) {
-        this.tableData = tableData;
-    }
-
     public TableController() {
-        DataController dataController = new DataController();
-        this.tableData = dataController.getTableData();
+        this.tableData = DataController.getInstance().getTableData();
     }
 
     @FXML
@@ -55,19 +50,13 @@ public class TableController {
         }
         tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-//        EventHandler tableColumnIsGenerateEventHandler = new EventHandler<TableColumn.CellEditEvent<RowData, Boolean>>() {
-//            @Override
-//            public void handle(TableColumn.CellEditEvent<RowData, Boolean> event) {
-//                System.out.println("че то кликнуло");
-//            }
-//        };
-        FilteredTableColumn<RowData, Boolean> tableColumnIsGenerate = new FilteredTableColumn<>("печатать?");
+        FilteredTableColumn<RowData, Boolean> tableColumnIsGenerate = new FilteredTableColumn<>("печатать?"); // fixme
         tableColumnIsGenerate.setCellValueFactory(param -> param.getValue().isGenerated());
         tableColumnIsGenerate.setCellFactory(param -> new CheckBoxTableCell());
         tableColumns.add(tableColumnIsGenerate);
 
-
         tableView.getColumns().setAll(tableColumns);
+
     }
 
 }

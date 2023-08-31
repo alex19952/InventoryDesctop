@@ -6,6 +6,6 @@ module amn.invetory.desktop {
 
 
     opens amn.inventory.desktop to javafx.fxml;
-    exports amn.inventory.desktop.controllers;
+    exports amn.inventory.desktop;
     opens amn.inventory.desktop.controllers to javafx.fxml;
 }

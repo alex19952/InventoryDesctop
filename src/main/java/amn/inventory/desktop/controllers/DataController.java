@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class DataController {
     private TableData tableData;
 
-    public DataController() {
+    private DataController() {
         tableData = getTableDataFromCSV("D:\\coding\\Java\\GTNN\\InventoryD\\InventoryDesktop\\test\\Основной_файл — копия3.csv", true);
     }
 
@@ -33,4 +33,11 @@ public class DataController {
         return tableData;
     }
 
+    public static DataController getInstance() {
+        return DataControllerHolder.INSTANCE;
+    }
+
+    private static class DataControllerHolder {
+        private static final DataController INSTANCE = new DataController();
+    }
 }

@@ -21,8 +21,8 @@
                            AnchorPane.rightAnchor="0.0"
                            AnchorPane.topAnchor="0.0"/>
             </AnchorPane>
-            <HBox VBox.vgrow="ALWAYS">
-               <fx:include source="table.fxml" HBox.hgrow="ALWAYS" />
+            <HBox fx:id="mainBox" VBox.vgrow="ALWAYS">
+               <fx:include fx:id="tableView" source="table.fxml" HBox.hgrow="ALWAYS" />
                <fx:include source="tool_bar.fxml"/>
             </HBox>
          </children>
